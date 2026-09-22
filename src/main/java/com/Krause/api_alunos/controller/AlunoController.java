@@ -35,34 +35,24 @@ public class AlunoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AlunoResposta> obterAlunoPorId(
-            @PathVariable int id) {
-
+    public ResponseEntity<AlunoResposta> obterAlunoPorId(@PathVariable int id) {
         return ResponseEntity.ok(service.obterAlunoPorId(id));
     }
 
     @PostMapping
-    public ResponseEntity<AlunoResposta> cadastrarAluno(
-            @Valid @RequestBody AlunoRequest request) {
-
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(service.cadastrarAluno(request));
+    public ResponseEntity<AlunoResposta> cadastrarAluno(@Valid @RequestBody AlunoRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastrarAluno(request));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AlunoResposta> atualizarAluno(
-            @Valid @RequestBody AlunoRequest request,
+    public ResponseEntity<AlunoResposta> atualizarAluno(@Valid @RequestBody AlunoRequest request,
             @PathVariable int id) {
-
         return ResponseEntity.ok(service.atualizarAluno(id, request));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluirAluno(
-            @PathVariable int id) {
-
+    public ResponseEntity<Void> excluirAluno(@PathVariable int id) {
         service.excluirAluno(id);
-
         return ResponseEntity.noContent().build();
     }
 }
