@@ -18,8 +18,7 @@ public class AlunoRequest {
 
     @NotBlank(message = "Email não pode ser vazio")
     @Email(message = "Formato de Email inválido")
-    @Size(max = 50, min = 5,
-            message = "Deve possuir entre 5 e 50 caracteres")
+    @Size(max = 50, min = 5, message = "Deve possuir entre 5 e 50 caracteres")
     private String email;
 
     @NotBlank(message = "Senha não pode ser vazia")
@@ -37,9 +36,7 @@ public class AlunoRequest {
     public AlunoRequest() {
     }
 
-    public AlunoRequest(String nome, String email, String senha,
-            LocalDate dataNascimento, double media) {
-
+    public AlunoRequest(String nome, String email, String senha, LocalDate dataNascimento, double media) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -47,43 +44,14 @@ public class AlunoRequest {
         this.media = media;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public double getMedia() {
-        return media;
-    }
-
-    public void setMedia(double media) {
-        this.media = media;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
+    public LocalDate getDataNascimento() { return dataNascimento; }
+    public void setDataNascimento(LocalDate dataNascimento) { this.dataNascimento = dataNascimento; }
+    public double getMedia() { return media; }
+    public void setMedia(double media) { this.media = media; }
 }
